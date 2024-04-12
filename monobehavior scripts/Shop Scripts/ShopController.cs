@@ -22,16 +22,18 @@ public class ShopController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.Escape)& ifAttack == false)
         {
-            //charge the player for the item
-            if(MySingleton.currentPellets >= ItemsSingleton.cherryItemCost)
+            if(Input.GetKeyUp(KeyCode.Alpha1))
             {
-                MySingleton.currentPellets -= ItemsSingleton.cherryItemCost;
-                MySingleton.thePlayer.addHP(5);
-                this.updatePlayerTMP();
+                //charge the player for the item
+                if(MySingleton.currentPellets >= ItemsSingleton.cherryItemCost)
+                {
+                    MySingleton.currentPellets -= ItemsSingleton.cherryItemCost;
+                    MySingleton.thePlayer.addHP(5);
+                    this.updatePlayerTMP();
+                }
             }
-        }
-       
+       }
     }
 }
