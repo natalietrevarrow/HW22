@@ -17,10 +17,12 @@ public class fightController : MonoBehaviour
     public TextMeshPro fightCommentaryTMP;
     public GameObject winningSoundGO, losingSoundGO, battleBackgroundGO;
     private AudioSource winningSound, losingSound;
+    public bool ifAttack;
 
     // Start is called before the first frame update
     void Start()
     {
+        ifAttack = true;
         this.winningSound = this.winningSoundGO.GetComponent<AudioSource>();
         this.losingSound = this.losingSoundGO.GetComponent<AudioSource>();
         this.fightCommentaryTMP.text = "";
